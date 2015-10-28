@@ -17,3 +17,7 @@ Shopping Cart
 
 Marketing
 - Get promotions
+
+# Dependencies
+
+- https://github.com/JetBrains/anko
