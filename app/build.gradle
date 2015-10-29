@@ -1,12 +1,15 @@
 buildscript {
+    ext.kotlin_version = '1.0.0-beta-1038'
     repositories {
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 repositories {
     jcenter()
@@ -14,11 +17,11 @@ repositories {
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "17.0.0"
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.silverkeytech.revolver.app"
-        minSdkVersion 19
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -38,5 +41,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.+'
+    compile 'com.android.support:appcompat-v7:22+'
+    compile 'org.jetbrains.anko:anko-sdk23:0.7.2'
+    compile 'org.jetbrains.anko:anko-support-v4:0.7.2'
+    compile 'org.jetbrains.anko:anko-appcompat-v7:0.7.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
